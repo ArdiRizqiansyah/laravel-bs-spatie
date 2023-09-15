@@ -9,8 +9,8 @@
                         <i class="fas fa-users"></i>
                     </div>
                     <div>
-                        Form User
-                        <div class="page-title-subheading">Form Data User</div>
+                        {{ $title }}
+                        <div class="page-title-subheading">{{ $subtitle }}</div>
                     </div>
                 </div>
                 <div class="page-title-actions">
@@ -22,7 +22,10 @@
             </div>
         </div>
 
-        <form action="" method="post">
+        <form action="{{ $url_action }}" method="post" enctype="multipart/form-data">
+            @if (@$user)
+                @method('PUT')
+            @endif
             @csrf
             <div class="card">
                 <div class="card-body">
@@ -35,9 +38,17 @@
                         @enderror
                     </div>
                     <div class="form-group mb-3">
-                        <label class="form-label fw-semibold">Email Addres</label>
+                        <label class="form-label fw-semibold">Nomor Telepon</label>
+                        <input type="text" class="form-control @error('phone') is-invalid @enderror" name="phone"
+                            placeholder="Masukkan Nomor Telepon" value="{{ old('phone', @$user->phone) }}" required>
+                        @error('phone')
+                            <span class="invalid-feedback">{{ $message }}</span>
+                        @enderror
+                    </div>
+                    <div class="form-group mb-3">
+                        <label class="form-label fw-semibold">Email</label>
                         <input type="email" class="form-control @error('email') is-invalid @enderror" name="email"
-                            placeholder="Masukkan Email Address" value="{{ old('email', @$user->email) }}" required>
+                            placeholder="Masukkan Email" value="{{ old('email', @$user->email) }}" required>
                         @error('email')
                             <span class="invalid-feedback">{{ $message }}</span>
                         @enderror
@@ -49,6 +60,10 @@
                         @error('password')
                             <span class="invalid-feedback">{{ $message }}</span>
                         @enderror
+                    </div>
+                    <div class="form-group mb-3">
+                        <label class="form-label fw-semibold">Avatar</label>
+                        <x-input.dropify name="avatar" :default="@$user?->getPhoto()" />
                     </div>
 
                     <div class="d-grid mt-3">

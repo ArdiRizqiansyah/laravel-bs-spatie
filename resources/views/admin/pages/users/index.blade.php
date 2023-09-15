@@ -14,34 +14,13 @@
                 <thead class="table-light">
                     <tr>
                         <th>Name</th>
-                        <th>No.Telephone</th>
-                        <th>Email Address</th>
-                        <th style="min-width: 150px">Options</th>
+                        <th>Telpon</th>
+                        <th>Email</th>
+                        <th style="min-width: 150px">Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td class="fw-medium">
-                            <div class="d-flex align-items-center">
-                                <img src="{{ auth()->user()->getPhoto() }}" class="avatar me-3" alt="user photo">
-                                <div>
-                                    Tes
-                                </div>
-                            </div>
-                        </td>
-                        <td>081313314141</td>
-                        <td>tes@gmail.com</td>
-                        <td>
-                            <a href="#" class="icon-link text-decoration-none me-2">
-                                <i class="fas fa-edit"></i>
-                            </a>
-
-                            <button class="btn btn-sm icon-link text-decoration-none btn-delete-data">
-                                <i class="fas fa-trash-alt"></i>
-                            </button>
-                        </td>
-                    </tr>
-                    {{-- @forelse ($users as $user)
+                    @forelse ($users as $user)
                         <tr>
                             <td class="fw-medium">
                                 <div class="d-flex align-items-center">
@@ -54,17 +33,13 @@
                             <td>{{ $user->phone ?? '-' }}</td>
                             <td>{{ $user->email }}</td>
                             <td>
-                                <a href="{{ route('super-admin.user.show', $user->id) }}" class="icon-link text-decoration-none me-3">
-                                    <x-icons.heroicons icon="eye-outline" />
+                                <a href="{{ route('admin.user.edit', $user->id) }}" class="icon-link text-decoration-none me-2">
+                                    <i class="fas fa-edit"></i>
                                 </a>
 
-                                <a href="{{ route('super-admin.user.edit', $user->id) }}" class="icon-link text-decoration-none me-2">
-                                    <x-icons.heroicons icon="pencil-outline" />
-                                </a>
-
-                                <button class="btn btn-sm icon-link text-decoration-none btn-delete-data"
-                                    data-url="{{ route('super-admin.user.destroy', $user->id) }}">
-                                    <x-icons.heroicons icon="trash-outline" />
+                                <button class="btn btn-sm icon-link text-decoration-none btn-delete-user"
+                                    data-url="{{ route('admin.user.destroy', $user->id) }}">
+                                    <i class="fas fa-trash-alt"></i>
                                 </button>
                             </td>
                         </tr>
@@ -74,9 +49,18 @@
                                 Tidak Ada Data
                             </td>
                         </tr>
-                    @endforelse --}}
+                    @endforelse
                 </tbody>
             </table>
         </div>
     </div>
+
+    @push('modal')
+        <x-partials.delete
+            item="user"
+            modalId="deleteUserModal"
+            formId="formdeleteUserModal"
+            buttonDelete="btn-delete-user"
+        />
+    @endpush
 @endsection

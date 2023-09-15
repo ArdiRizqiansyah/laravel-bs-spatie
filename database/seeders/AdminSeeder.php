@@ -15,6 +15,7 @@ class AdminSeeder extends Seeder
     {
         $data = [
             'name' => 'Admin',
+            'phone' => '081234567890',
             'email' => 'admin@admin.com',
             'email_verified_at' => now(),
             'password' => bcrypt('admin'),

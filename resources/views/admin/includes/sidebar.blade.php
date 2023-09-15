@@ -7,7 +7,7 @@
             </div>
             <div class="card-body p-4">
                 <div class="sidebar-menu">
-                    <a class="text-sidebar d-block p-2 m-1 {{ request()->routeIs('user.dashboard') ? 'active' : '' }}" href="#">
+                    <a class="text-sidebar d-block p-2 m-1 {{ request()->routeIs('admin.user.*') ? 'active' : '' }}" href="#">
                         <i class="fas fa-users me-2"></i>
                         User
                     </a>

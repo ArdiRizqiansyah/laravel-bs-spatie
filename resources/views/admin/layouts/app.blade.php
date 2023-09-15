@@ -34,5 +34,7 @@
     @stack('before-scripts')
     @include('admin.includes.scripts')
     @stack('after-scripts')
+
+    @stack('modal')
 </body>
 </html>

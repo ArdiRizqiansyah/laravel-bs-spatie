@@ -1,5 +1,5 @@
 body{
-    font-style: Inter, sans-serif;
+    font-style: $font-family-1;
     background-color: $background-main;
 }
 
@@ -30,6 +30,37 @@ body{
     &:hover {
         color: $neutral-10;
         background: $primary-main;
+    }
+}
+
+.btn-outline-secondary-app {
+    color: $secondary-main;
+    background: transparent;
+    border-radius: 8px;
+    border: 1px solid $secondary-main;
+
+    svg {
+        width: 20px;
+    }
+
+    &:hover {
+        color: $primary-main;
+        border: 1px solid $primary-main;
+    }
+}
+
+.btn-danger-app {
+    color: $neutral-10;
+    background: $color-9;
+    border-radius: 8px;
+
+    svg {
+        width: 20px;
+    }
+
+    &:hover {
+        color: $neutral-10;
+        background: $danger-hover;
     }
 }
 
@@ -85,5 +116,32 @@ body{
 
     .page-title-actions {
         margin-left: auto;
+    }
+}
+
+.icon-wrapper {
+    width: 45px;
+    height: 45px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-content: center;
+    align-items: center;
+
+    .icon-wrapper-bg {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        z-index: 3;
+    }
+
+    svg, i {
+        padding: 10px;
+        margin: 0 auto;
+        font-size: 1.7rem !important;
+        position: relative;
+        z-index: 5;
+        width: inherit;
     }
 }
