@@ -1,10 +1,14 @@
 body {
-  background: $background-color;
-  background: $background-gradient;
+  background: $primary-hover;
 }
 
 .btn-login {
   font-size: 0.9rem;
   letter-spacing: 0.05rem;
   padding: 0.75rem 1rem;
+  background-color: $primary-main;
+
+  &:hover {
+    background-color: $primary-hover;
+  }
 }
