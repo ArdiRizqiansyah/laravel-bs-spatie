@@ -66,7 +66,7 @@ import 'bootstrap';
 ```
 
 ## B. Tutorial Instalasi Spatie Role Permission di Laravel
-[Text Link](https://spatie.be/docs/laravel-permission/v5/introduction)
+[Dokumentasi Spatie Role Permission](https://spatie.be/docs/laravel-permission/v5/introduction)
 
 1. instal package via composer
 ```bash
@@ -112,7 +112,7 @@ use HasRoles;
 ```
 
 ### C. Tutorial Instalasi Spatie Media Library di Laravel
-[Text Link](https://spatie.be/docs/laravel-medialibrary/v10/introduction)
+[Dokumentasi Spatie Media Library](https://spatie.be/docs/laravel-medialibrary/v10/introduction)
 
 1. instal package via composer
 ```bash
