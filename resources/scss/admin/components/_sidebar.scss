@@ -1,0 +1,60 @@
+.sidebar {
+	.bg-profile {
+		width: 100%;
+		background-color: $primary-main;
+		border-radius: 10px 10px 0 0;
+		text-align: center;
+		padding-top: 40px;
+		padding-bottom: 40px;
+
+		.avatar {
+			margin: auto;
+			display: block;
+			height: 100px;
+			width: 100px;
+			border-radius: 50%;
+		}
+
+		.bg-profile-text {
+			font-style: normal;
+			font-weight: 500;
+			font-size: 20px;
+			line-height: 150%;
+			color: $neutral-10;
+			margin-top: 4px;
+			margin-bottom: 0;
+		}
+	}
+
+	.sidebar-heading {
+		color: $primary-main;
+		font-weight: 500;
+		margin: 14px 0;
+	}
+
+	.sidebar-menu {
+		.text-sidebar {
+			font-size: 15px;
+			color: $neutral-70;
+			text-decoration: none;
+			border-radius: 4px;
+			display: block;
+			padding: 8px;
+			margin-bottom: 2px;
+	
+			svg {
+				width: 21px;
+				margin-right: 8px;
+			}
+	
+			&:hover:not(.active) {
+				background: $secondary-surface;
+			}
+		}
+	
+		.active {
+			background: $color-6;
+			color: $secondary-main;
+		}
+	}
+}

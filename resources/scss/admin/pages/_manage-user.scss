@@ -1,0 +1,99 @@
+.admin-users-page {
+    .icon-link {
+        color: $neutral-70;
+        vertical-align: baseline;
+
+        svg {
+            width: 16.25px;
+            height: 16.25px;
+        }
+
+        &:hover {
+            color: $neutral-90;
+        }
+    }
+
+    .table {
+        vertical-align: middle;
+
+        thead {
+            background-color: #f9fafb;
+
+            th {
+                font-weight: 500 !important;
+                font-size: 12px;
+                line-height: 150%;
+                color: $neutral-70;
+            }
+        }
+
+        tbody {
+            .avatar {
+                padding: 0px;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+            }
+
+            td.fw-medium {
+                font-size: 16px;
+                color: $neutral-90;
+            }
+
+            td {
+                color: $neutral-70;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 150%;
+            }
+        }
+
+        td,
+        th {
+            padding: 13px 24px;
+        }
+    }
+
+    ul.pagination {
+        li.page-item {
+            &:first-child {
+                margin-right: auto;
+            }
+
+            &:last-child {
+                margin-left: auto;
+            }
+
+            &:first-child,
+            &:last-child {
+                .page-link {
+                    border: 1px solid #eaecf0;
+                }
+            }
+
+            .page-link {
+                margin-left: 2px;
+                margin-right: 2px;
+                border: none;
+                border-radius: 8px;
+                color: $neutral-90;
+
+                &:hover {
+                    background: #fbefcd;
+                    color: $secondary-main !important;
+                }
+
+                svg {
+                    width: 16px;
+                }
+            }
+
+            + .active {
+                .page-link {
+                    background: #fbefcd;
+                    color: $secondary-main !important;
+                }
+            }
+        }
+    }
+}
